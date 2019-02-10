@@ -22,4 +22,19 @@ class MainCoordinator: Coordinator {
          vc.coordinator = self
          navigationController.pushViewController(vc, animated: false)
     }
+    
+    func configure(_ friend:Friend){
+        let vc = FriendEditViewController.instantiate()
+        vc.coordinator = self
+        vc.friend = friend
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func updateData(_ friend:Friend){
+        guard let vc = navigationController.viewControllers.first as? ViewController else{
+            fatalError("couldnt init")
+        }
+        
+        vc.update(fri: friend)
+    }
 }
