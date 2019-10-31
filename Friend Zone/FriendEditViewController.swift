@@ -22,6 +22,7 @@ class FriendEditViewController: UITableViewController, Storyboarded {
         return tableView.cellForRow(at: index) as? TextVieTableViewCell
     }
 
+    //MARK: - Main functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,6 +61,7 @@ class FriendEditViewController: UITableViewController, Storyboarded {
         return 2
     }
     
+    //MARK: - Tableview functions
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
             return 1
